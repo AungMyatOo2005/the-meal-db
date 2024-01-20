@@ -1,0 +1,141 @@
+body {
+  background-color: #1f1007;
+}
+.home-background-img {
+  background-image: url(./assets/spaghetti-1932466.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+.meal-list-background-image {
+  background-image: url(./assets/board-wp.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+.for-background {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.356);
+}
+.hide {
+  opacity: 0;
+  transition: transform 0.3s ease-out;
+  transform: translateX(-100px);
+}
+.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.hide-card {
+  opacity: 0.2;
+  transition: transform 2s ease-in;
+  transform: scale(0.5);
+}
+
+.show-card {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.nav-bottom-bar {
+  position: absolute;
+  height: 2px;
+  background: white;
+  bottom: -2px;
+  left: 0;
+  transition: all 0.3s;
+}
+nav a.active {
+  color: orangered;
+}
+nav a:not(.active):hover {
+  color: rgb(184, 184, 184);
+}
+nav a.active:nth-child(1) ~ .nav-bottom-bar {
+  left: 0;
+  width: 42.98px;
+}
+nav a.active:nth-child(2) ~ .nav-bottom-bar {
+  left: 62.98px;
+  width: 56.89px;
+}
+nav a.active:nth-child(3) ~ .nav-bottom-bar {
+  left: 139.87px;
+  width: 59.61px;
+}
+nav a.active:nth-child(4) ~ .nav-bottom-bar {
+  left: 219.48px;
+  width: 57.59px;
+}
+
+nav a:nth-child(1):hover ~ .nav-bottom-bar {
+  left: 0;
+  width: 42.98px;
+}
+
+nav a:nth-child(2):hover ~ .nav-bottom-bar {
+  left: 62.98px;
+  width: 56.89px;
+}
+
+nav a:nth-child(3):hover ~ .nav-bottom-bar {
+  left: 139.87px;
+  width: 59.61px;
+}
+
+nav a:nth-child(4):hover ~ .nav-bottom-bar {
+  left: 219.48px;
+  width: 57.59px;
+}
+
+.spinner {
+  width: 60px;
+  height: 60px;
+  border: 8px solid rgb(207, 207, 207);
+  border-top: 8px solid rgb(55, 148, 255);
+  border-radius: 50%;
+  animation: spinner 1s infinite linear;
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.scrollbar-style::-webkit-scrollbar {
+  height: 10px;
+  width: 10px;
+}
+.scrollbar-style::-webkit-scrollbar-thumb {
+  background-color: orangered;
+  border-radius: 5px;
+  border: 2.5px solid transparent;
+  background-clip: content-box;
+}
+.scrollbar-style::-webkit-scrollbar-track {
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+.nav-animation {
+  animation: nav-animate 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+@keyframes nav-animate {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
