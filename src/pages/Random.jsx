@@ -30,7 +30,7 @@ const Random = () => {
   };
 
   useEffect(() => {
-    return () => fetchRandomMeals();
+    fetchRandomMeals();
   }, []);
 
   useEffect(() => {
