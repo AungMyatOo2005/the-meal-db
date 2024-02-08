@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Navbar from "./components/Navbar";
 import { ContextProvider } from "./context/GlobalContext";
@@ -15,7 +15,7 @@ const App = () => {
   Intersecting();
   return (
     <ContextProvider>
-      <BrowserRouter>
+      <Router>
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
@@ -25,7 +25,7 @@ const App = () => {
           <Route path="/favorite" element={<Favorite />} />
           <Route path="/details/:id" element={<RecipeDetails />} />
         </Routes>
-      </BrowserRouter>
+      </Router>
     </ContextProvider>
   );
 };
