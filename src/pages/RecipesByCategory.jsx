@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import Recipes from "../components/Recipes";
+import Recipes from "./Recipes";
 import CategoryBar from "../components/CategoryBar";
 import Intersecting from "../hooks/Intersecting";
 import axios from "axios";
@@ -29,6 +29,7 @@ const RecipesByCategory = () => {
 
     fetchMeals();
   }, [category]);
+
   useEffect(() => {
     Intersecting();
   });
@@ -36,7 +37,7 @@ const RecipesByCategory = () => {
     <div className="min-h-[100vh] meal-list-background-image py-16 relative z-[5] ">
       <div className="for-background z-[-1] backdrop-blur-[3px]"></div>
       <CategoryBar category={category} />
-      <h1 className="mt-6 w-full  text-[22px] sm:text-[32px] text-white font-robotoSlab text-center">
+      <h1 className="mt-6 w-full text-[32px] text-white font-robotoSlab text-center">
         Yummy foods are here
       </h1>
       <Recipes

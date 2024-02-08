@@ -1,15 +1,34 @@
 import React, { useEffect, useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { back, home, youtube } from "../assets";
 import AddFavorite from "../components/AddFavorite";
+import axios from "axios";
 
-const RecipeDetails = () => {
+const RecipeDetails = ({ idMeal, randomEl }) => {
   const [ingredients, setIngredients] = useState([]);
-  const location = useLocation();
   const navigator = useNavigate();
-  const data = location.state;
-
+  const [data, setData] = useState([]);
+  const { id } = useParams();
+  const [isLoading, setIsLoading] = useState(true);
+  const [isError, setIsError] = useState(false);
+  const meal_id = id ?? idMeal;
   useEffect(() => {
+    const fetchMeal = async () => {
+      try {
+        const resp = await axios.get(
+          `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${meal_id}`
+        );
+        const respData = resp.data;
+        setData(respData.meals[0]);
+        setIsLoading(false);
+      } catch (err) {
+        console.error("Error fetching meals:", err.message);
+        setIsError(true);
+        setIsLoading(false);
+      }
+    };
+    fetchMeal();
+
     const getIngredients = () => {
       const newIngredient = [];
       for (let i = 1; i <= 20; i++) {
@@ -38,10 +57,11 @@ const RecipeDetails = () => {
         </button>
         <AddFavorite id={data.idMeal} />
       </div>
+      {randomEl && randomEl}
       <div className="for-background z-[-1] backdrop-blur-[3px]"></div>
 
       <div className="w-full sm:px-10 md:px-16 pt-16 gap-x-5 gap-y-12 grid grid-cols-1 sm:grid-cols-2 items-center">
-        <div className="w-full max-w-[300px] bg-white p-2 rounded-md justify-self-center h-fit">
+        <div className="w-full xs:w-[70%] ss:w-[50%] sm:w-[70%] bg-white p-2 rounded-md justify-self-center h-fit">
           <img
             src={data.strMealThumb}
             className="w-full rounded-md"
@@ -49,13 +69,13 @@ const RecipeDetails = () => {
           />
         </div>
         <div className="w-full">
-          <h1 className="text-white font-robotoSlab text-[24px] md:text-[28px] underline">
+          <h1 className="text-white font-robotoSlab text-[20px] sm:text-[24px] md:text-[28px] underline">
             {data.strMeal}
           </h1>
           <h4 className="text-white text-[16px] sm:text-[18px] md:text-[22px] mt-4 bg-[orangered] w-fit py-1 px-2 rounded-sm">
             Traditional <i className="underline">{data.strArea}</i> food
           </h4>
-          <h4 className="text-white text-[16px] sm:text-[18px] md:text-[22px] mt-1">
+          <h4 className="text-white text-[16px] sm:text-[18px] md:text-[22px] mt-2x">
             Main Category ({data.strCategory})
           </h4>
           <div className="mt-10">

@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
-import FoodList from "./FoodList";
+import FoodList from "../components/FoodList";
 import Intersecting from "../hooks/Intersecting";
-import Loading from "./Loading";
-import Error from "./Error";
+import Loading from "../components/Loading";
+import Error from "../components/Error";
 
 const Recipes = ({ isLoading, isError, mealData, category, setIsError }) => {
   useEffect(() => {

@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import Intersecting from "../hooks/Intersecting";
-import Recipes from "../components/Recipes";
+import Recipes from "./Recipes";
 import { back } from "../assets";
 
 const RecipesByQuery = () => {
@@ -39,7 +39,7 @@ const RecipesByQuery = () => {
         <img src={back} className="w-[40px] z-[20]" />
       </button>
       <div className="for-background z-[-1] backdrop-blur-[3px]"></div>
-      <h1 className="mt-4 w-full  text-[22px] sm:text-[32px] text-white font-robotoSlab text-center">
+      <h1 className="mt-4 w-full text-[32px] text-white font-robotoSlab text-center">
         Yummy foods are here
       </h1>
       <Recipes

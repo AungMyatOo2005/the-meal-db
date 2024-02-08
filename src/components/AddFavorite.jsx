@@ -28,7 +28,7 @@ const AddFavorite = ({ id }) => {
       } py-1 px-2 text-white font-roboto rounded-sm flex items-center gap-2 border-2 border-[orangered]`}
       onClick={handleFavorite}
     >
-      Add to favorite
+      {isHave ? "Remove from favorite" : "Add to favorite"}
       <img src={heart} className="w-[20px]" />
     </button>
   );

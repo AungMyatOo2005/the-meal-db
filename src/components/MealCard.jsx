@@ -6,8 +6,8 @@ import { useNavigate } from "react-router-dom";
 
 const MealCard = ({ id, setIsError }) => {
   const [data, setData] = useState({});
-  const { isDarkMode } = useAppContext();
   const [isLoading, setIsLoading] = useState(true);
+  const { isDarkMode } = useAppContext();
   const navigator = useNavigate();
   const fetchMeals = async () => {
     try {
@@ -19,13 +19,13 @@ const MealCard = ({ id, setIsError }) => {
       setIsLoading(false);
     } catch (err) {
       console.error("Error fetching meals:", err.message);
-      setIsError && setIsError(true);
+      setIsError(true);
       setIsLoading(false);
     }
   };
 
   useEffect(() => {
-    fetchMeals();
+    return () => fetchMeals();
   }, [id]);
 
   useEffect(() => {
@@ -39,7 +39,7 @@ const MealCard = ({ id, setIsError }) => {
           className={`hide-card ${
             isDarkMode ? "bg-[#0f0f0f] text-white" : "bg-[#c4c4c4] text-black"
           } border-2 border-white rounded-md hover:-translate-y-1 hover:scale-105 transition-all w-full max-w-[360px] justify-self-center`}
-          onClick={() => navigator(`/details`, { state: data })}
+          onClick={() => navigator(`/details/${id}`)}
         >
           <img
             src={data.strMealThumb}
