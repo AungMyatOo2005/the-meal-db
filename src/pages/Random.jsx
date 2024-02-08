@@ -1,7 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { reload } from "../assets";
-import Intersecting from "../hooks/Intersecting";
 import Loading from "../components/Loading";
 import Error from "../components/Error";
 import RecipeDetails from "./RecipeDetails";
@@ -30,10 +29,6 @@ const Random = () => {
   useEffect(() => {
     return () => fetchRandomMeals();
   }, []);
-
-  useEffect(() => {
-    Intersecting();
-  });
 
   const reFetchData = () => {
     setMealData([]);

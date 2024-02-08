@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useAppContext } from "../context/GlobalContext";
-import Intersecting from "../hooks/Intersecting";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
@@ -28,15 +27,13 @@ const MealCard = ({ id, setIsError }) => {
     return () => fetchMeals();
   }, [id]);
 
-  useEffect(() => {
-    Intersecting();
-  });
+
 
   return (
     <>
       {!isLoading && (
         <div
-          className={`hide-card ${
+          className={` ${
             isDarkMode ? "bg-[#0f0f0f] text-white" : "bg-[#c4c4c4] text-black"
           } border-2 border-white rounded-md hover:-translate-y-1 hover:scale-105 transition-all w-full max-w-[360px] justify-self-center`}
           onClick={() => navigator(`/details/${id}`)}

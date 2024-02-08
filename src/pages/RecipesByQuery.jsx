@@ -1,7 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import Intersecting from "../hooks/Intersecting";
 import Recipes from "./Recipes";
 import { back } from "../assets";
 
@@ -30,9 +29,6 @@ const RecipesByQuery = () => {
     fetchMeals();
   }, [query]);
 
-  useEffect(() => {
-    Intersecting();
-  });
   return (
     <div className="min-h-[100vh] meal-list-background-image py-16 relative z-[5] ">
       <button className=" ml-4 mt-4" onClick={() => navigator(-1)}>

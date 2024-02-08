@@ -1,17 +1,12 @@
 import React, { useEffect, useState } from "react";
 import loupe from "../assets/loupe.png";
 import PopularCategories from "../components/PopularCategories";
-import Intersecting from "../hooks/Intersecting";
 import { useNavigate } from "react-router-dom";
 
 const Home = () => {
   const navigator = useNavigate();
 
   const [inputValue, setInputValue] = useState("");
-
-  useEffect(() => {
-    Intersecting();
-  });
 
   const handleKeyDown = (e) => {
     if (e.key === "Enter") {
@@ -34,12 +29,12 @@ const Home = () => {
               It is even better then <br className="md:block hidden" /> an
               expensive cookery book
             </h1>
-            <p className="text-white font-roboto tracking-[1px] mt-2 hide">
+            <p className="text-white font-roboto tracking-[1px] mt-2">
               Learn how to make your favorite restaurant's dishes
             </p>
           </div>
 
-          <div className="w-fit mt-10 flex border-2 border-white rounded-full gap-2 hide text-[14px] ss:text-[16px] hide">
+          <div className="w-fit mt-10 flex border-2 border-white rounded-full gap-2 text-[14px] ss:text-[16px]">
             <input
               className="bg-transparent px-4 placeholder:text-white text-white outline-none tracking-[1px] w-[200px]"
               placeholder="I want to make..."

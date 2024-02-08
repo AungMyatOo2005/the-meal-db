@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { pork, beef, salmon, chicken, wave } from "../assets";
 import { useAppContext } from "../context/GlobalContext";
-import Intersecting from "../hooks/Intersecting";
 import { useNavigate } from "react-router-dom";
 
 const category = [
@@ -29,9 +28,6 @@ const PopularCategories = () => {
     }
   };
 
-  useEffect(() => {
-    Intersecting();
-  });
   return (
     <div
       className={`w-full ${
@@ -45,7 +41,7 @@ const PopularCategories = () => {
       >
         Recipes by popular category
       </h1>
-      <p className="w-full text-center mt-2 text-gray-500 hide">
+      <p className="w-full text-center mt-2 text-gray-500 ">
         You can choice recipes by categories
       </p>
       <div className="grid grid-cols-2 md:grid-cols-4 px-6 sm:px-16 md:px-32 gap-8 mt-10">
@@ -53,7 +49,7 @@ const PopularCategories = () => {
           <div
             key={category.id}
             style={{ backgroundImage: `url(${wave})` }}
-            className={` w-full bg-center bg-cover rounded-[5px] relative z-[1] flex items-center justify-center flex-col hover:translate-x-1 hover:-translate-y-2 transition-all cursor-pointer hide-card ${
+            className={` w-full bg-center bg-cover rounded-[5px] relative z-[1] flex items-center justify-center flex-col hover:translate-x-1 hover:-translate-y-2 transition-all cursor-pointer ${
               isDarkMode
                 ? "shadow-[5px_5px_8px_3px_rgb(225,225,225,0.3)]"
                 : "shadow-[2px_2px_10px_3px_rgb(0,0,0,0.3)]"

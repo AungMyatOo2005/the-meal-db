@@ -1,11 +1,8 @@
 import React, { useEffect, useState } from "react";
-import FoodList from "../components/FoodList";
 import MealCard from "../components/MealCard";
-import { useNavigate } from "react-router-dom";
 
 const Favorite = () => {
   const [lsData, setLsData] = useState([]);
-  const navigator = useNavigate();
 
   useEffect(() => {
     const mealIds = JSON.parse(localStorage.getItem("Favorite_Meals")) || [];

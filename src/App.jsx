@@ -1,9 +1,7 @@
-import React, { useEffect } from "react";
 import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Navbar from "./components/Navbar";
 import { ContextProvider } from "./context/GlobalContext";
-import Intersecting from "./hooks/Intersecting";
 import Home from "./pages/Home";
 import Random from "./pages/Random";
 import Favorite from "./pages/Favorite";
@@ -12,7 +10,6 @@ import RecipesByQuery from "./pages/RecipesByQuery";
 import RecipeDetails from "./pages/RecipeDetails";
 
 const App = () => {
-  Intersecting();
   return (
     <ContextProvider>
       <Router>
