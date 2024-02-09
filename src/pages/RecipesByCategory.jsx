@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import Recipes from "./Recipes";
+import Recipes from "../components/Recipes";
 import CategoryBar from "../components/CategoryBar";
 import axios from "axios";
 
@@ -28,7 +28,6 @@ const RecipesByCategory = () => {
 
     fetchMeals();
   }, [category]);
-
 
   return (
     <div className="min-h-[100vh] meal-list-background-image py-16 relative z-[5] ">

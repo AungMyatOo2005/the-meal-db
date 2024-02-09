@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import Recipes from "./Recipes";
+import Recipes from "../components/Recipes";
 import { back } from "../assets";
 
 const RecipesByQuery = () => {

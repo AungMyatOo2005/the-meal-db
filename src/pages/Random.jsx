@@ -10,7 +10,6 @@ const Random = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
   const [rotation, setRotation] = useState(360);
-  console.log(mealData);
   const fetchRandomMeals = async () => {
     try {
       const resp = await axios.get(
@@ -27,7 +26,7 @@ const Random = () => {
   };
 
   useEffect(() => {
-    return () => fetchRandomMeals();
+    fetchRandomMeals();
   }, []);
 
   const reFetchData = () => {
@@ -39,6 +38,7 @@ const Random = () => {
     reloadAnimation.style.transform = `rotate(${rotation}deg)`;
     reloadAnimation.style.transition = "1s";
   };
+
   const randomEl = (
     <div
       className="flex flex-col

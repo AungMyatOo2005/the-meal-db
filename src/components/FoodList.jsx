@@ -1,7 +1,7 @@
 import React from "react";
 import MealCard from "./MealCard";
 
-const FoodList = ({ mealData, category, setIsError }) => {
+const FoodList = ({ mealData, category}) => {
   return (
     <>
       {mealData ? (
@@ -10,7 +10,6 @@ const FoodList = ({ mealData, category, setIsError }) => {
             <MealCard
               key={`${data.idMeal}_${index}`}
               id={data.idMeal}
-              setIsError={setIsError}
             />
           ))}
         </div>
