@@ -20,7 +20,7 @@ const MealCard = ({ id }) => {
   };
 
   useEffect(() => {
-    return () => fetchMeals();
+    fetchMeals();
   }, [id]);
 
   return (
