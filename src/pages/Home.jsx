@@ -25,7 +25,7 @@ const Home = () => {
       <div className=" w-full min-h-[100vh] flex px-4 ss:px-12 sm:px-20 items-center">
         <div className="max-w-[80%] sm:max-w-[70%] md:max-w-[60%] py-5 z-[10]">
           <div>
-            <h1 className="text-white font-robotoSlab text-[22px] xs:text-[32px] ss:text-[42px] sm:text-[52px] font-semibold tracking-[2px] sm:leading-[60px]">
+            <h1 className="text-white font-robotoSlab text-[24px] xs:text-[32px] ss:text-[42px] sm:text-[52px] font-semibold tracking-[2px] sm:leading-[60px]">
               It is even better then <br className="md:block hidden" /> an
               expensive cookery book
             </h1>
@@ -34,7 +34,7 @@ const Home = () => {
             </p>
           </div>
 
-          <div className="w-fit mt-10 flex border-2 border-white rounded-full gap-2 text-[14px] ss:text-[16px]">
+          <div className="w-fit mt-10 flex border-2 border-white rounded-full gap-2 text-[16px]">
             <input
               className="bg-transparent px-4 placeholder:text-white text-white outline-none tracking-[1px] w-[200px]"
               placeholder="I want to make..."

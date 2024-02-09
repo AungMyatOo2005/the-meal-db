@@ -48,7 +48,7 @@ const Random = () => {
         className=" bg-white py-1 px-2 rounded-sm flex items-center justify-center gap-4 cursor-pointer select-none ml-auto mr-4 mt-4"
         onClick={reFetchData}
       >
-        <span>Reload</span>
+        <span>Random</span>
         <img src={reload} className="w-[20px] for-reload" />
       </div>
       <h1 className="mt-6 w-full text-[32px] text-white font-robotoSlab text-center">
